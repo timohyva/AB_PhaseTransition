@@ -6,7 +6,7 @@
 # the free energy difference is rescaled by absolute value of equilibrium free energy of B phase
 
 # This is version.2, in which the effective mass, Fermi velocity and energy density are added
-# the unit is pJ.mm^-3, J.m^-3 = 10^12 pJ.mm^-3
+# the unit is pJ.mm^-3, J.m^-3 = 10^3 pJ.mm^-3
 
 # author:Quang. Zhang (github:hyvatimo)
 
@@ -234,7 +234,7 @@ for iP in range(0, lengthPressure, 1):
 
 
            DiffFABGLScaled[indexP,indexT] = (fAGLRed - fBGLRed)/abs(fBGLRed)
-           DiffFABGL[indexP,indexT] = DiffFABGLScaled[indexP,indexT]*abs(fBGLRed*N0)*(10**(12)) # take the J.m^-3 back, and product 10^12 to pJ.mm^-3 
+           DiffFABGL[indexP,indexT] = DiffFABGLScaled[indexP,indexT]*abs(fBGLRed*N0)*(10**(3)) # take the J.m^-3 back, and product 10^3 to pJ.mm^-3 
         
            fBGL_array[indexP,indexT] = fBGLRed
            fAGL_array[indexP,indexT] = fAGLRed

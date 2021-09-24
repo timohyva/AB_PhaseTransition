@@ -5,7 +5,8 @@
 # strong coupling correction coefficients of \beta comes from PRB. 101. 024517
 # the free energy difference is rescaled by absolute value of equilibrium free energy of B phase
 
-# This is version.2 of ebergy difference code, in which the pico-Joule(pJ 10^-12) unit is used 
+# This is version.2 of ebergy difference code, in which the pico-Joule(pJ 10^-12) unit is used
+# J.m^-3 = 10^3 pJ.mm^-3
 
 # author: Quang. Zhang (github@hyvatimo)
 
@@ -271,7 +272,7 @@ for iP in range(0, lengthPressure, 1):
 # plot1.close()    
 
 # density and contour plot of the fAGL - fBGL
-DensityPlot = plot1.pcolormesh(Temperature*1000, pressure, DiffFABGL*(10**(12)));plot1.ylabel(r'$p/bar$'); plot1.xlabel(r'$T$/mK');plot1.colorbar(DensityPlot)
+DensityPlot = plot1.pcolormesh(Temperature*1000, pressure, DiffFABGL*(10**(3)));plot1.ylabel(r'$p/bar$'); plot1.xlabel(r'$T$/mK');plot1.colorbar(DensityPlot)
 Cplot = plot1.contour(Temperature*1000, pressure, DiffFABGL);plot1.clabel(Cplot, inline=True, fontsize=8.5, colors='r')
 plot1.savefig('DensityPlot_FreeEnergyDiff_SI_unit.pdf');
 plot1.show()
@@ -283,7 +284,7 @@ plot1.close()
 # density and contour plot of (fAGL - fBGL)/|fBGL|
 DensityPlot = plot1.pcolormesh(Temperature*1000, pressure, DiffFABGLScaled);plot1.ylabel(r'$p/bar$'); plot1.xlabel(r'$T$/mK');plot1.colorbar(DensityPlot)
 Cplot = plot1.contour(Temperature*1000, pressure, DiffFABGLScaled);plot1.clabel(Cplot, inline=True, fontsize=8.5, colors='r')
-plot1.savefig('DensityPlot_FreeEnergyDiff_Scaled_SI_unit.pdf');
+# plot1.savefig('DensityPlot_FreeEnergyDiff_Scaled_SI_unit.pdf');
 plot1.show()
 
 plot1.clf()
