@@ -5,8 +5,10 @@
 # strong coupling correction coefficients of \beta comes from PRB. 101. 024517
 # the free energy difference is rescaled by absolute value of equilibrium free energy of B phase
 
-# This is version.2 of ebergy difference code, in which the pico-Joule(pJ 10^-12) unit is used
+# This is version.3 of ebergy difference code, in which the pico-Joule(pJ 10^-12) unit is used
 # J.m^-3 = 10^3 pJ.mm^-3
+
+# And this script also uses the Module_SC_CorrectionObject_V01 to calculate the SC coefficients.
 
 # author: Quang. Zhang (github@hyvatimo)
 
