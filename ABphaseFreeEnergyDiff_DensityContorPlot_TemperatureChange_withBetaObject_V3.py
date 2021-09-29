@@ -171,7 +171,7 @@ for iP in range(0, lengthPressure, 1):
 
 # density and contour plot of the fAGL - fBGL
 DensityPlot = plot1.pcolormesh(Temperature*1000, pressure, DiffFABGL*(10**(3)));plot1.ylabel(r'$p/bar$'); plot1.xlabel(r'$T$/mK');plot1.colorbar(DensityPlot)
-Cplot = plot1.contour(Temperature*1000, pressure, DiffFABGL);plot1.clabel(Cplot, inline=True, fontsize=8.5, colors='r')
+Cplot = plot1.contour(Temperature*1000, pressure, DiffFABGL*(10**(3)));plot1.clabel(Cplot, inline=True, fontsize=8.5, colors='r')
 plot1.savefig('DensityPlot_FreeEnergyDiff_SI_unit_moduleV01.pdf');
 plot1.show()
 
