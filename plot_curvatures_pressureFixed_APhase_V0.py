@@ -56,7 +56,7 @@ stepT = 0.1*(10**-3)
 Temperature = np.arange(0.0*(10**-3), 2.5*(10**-3)+stepT, stepT) #Kelvin
 
 stepPressure = 1.0*bar
-pressure = np.arange(20.0, 34.0*bar+stepPressure, stepPressure)
+pressure = np.arange(18.0, 34.0*bar+stepPressure, stepPressure)
 
 print('Temperature is', Temperature, '\n length of Temperature is ', len(Temperature))
 lengthT = len(Temperature)
@@ -100,6 +100,9 @@ for iP in range(0, lengthPressure, 1):
 
     N0 = ((mEffective**(2))*vFermi)/((2*pi*pi)*(hbar**(3))) # energy density of Fermi surface
 
+    if indexP == 0:
+        N0_Red = N0 # using the lowest pressure N0 to rescale 
+
     print('\npressure is, ',p,' effective mass is, ', mEffective, ' Fermi velocity is,', vFermi, ' N(0) is ',N0,'\n\n')
     
     for iT in range(0, lengthT, 1):
@@ -118,10 +121,11 @@ for iP in range(0, lengthPressure, 1):
         else:
 
         
-           alphaRed = (1/3)*(t-1)
-           beta245Red = ((7*zeta3)/(240*pi*pi*kb*kb*Tcp*Tcp))*(2+t*c245p) # A Phase
-           deltaA = math.sqrt((-alphaRed)/(4*beta245Red)) # A -> B
+           alpha = (1/3)*N0*(t-1)
+           beta245 = ((7*zeta3*N0)/(240*pi*pi*kb*kb*Tcp*Tcp))*(2+t*c245p) # A Phase
+           deltaA = math.sqrt((-alpha)/(4*beta245)) # A -> B
            # deltaA = 1
+           print(' deltaA is : ', deltaA)
            
             
            betatilde = (7*zeta3*N0)/(240*pi*pi*kb*kb)
@@ -146,6 +150,8 @@ for iP in range(0, lengthPressure, 1):
            beta5SC = (c5p/(Tcp*Tcp))*betatilde
            beta5 = beta5WC + t*beta5SC
 
+           print(' beta1 is : ', beta1, ' beta2 is :', beta2,' beta3 is :', beta3, 'beta4 is :', beta4, 'beta5 is :', beta5)
+           
            beta4beta5_array[indexP,indexT] = -4*(beta4 + beta5)*(deltaA**2)
            beta3beta4beta5_array[indexP,indexT] = 4*(beta3-beta4-beta5)*(deltaA**2)
            beta5_array[indexP,indexT] = -8*beta5*(deltaA**2)
@@ -194,9 +200,61 @@ for iP in range(0, lengthPressure, 1):
 #plot1.savefig('DensityPlot_FreeEnergyDiff_SI_unit_moduleV01.pdf');
 
 # DensityPlot = plot1.pcolormesh(Temperature*1000, pressure, beta2beta4beta5_array);plot1.ylabel(r'$p/bar$'); plot1.xlabel(r'$T$/mK');plot1.colorbar(DensityPlot)
+
+indexP = 4
+plot1.plot(Temperature*1000, (beta4beta5_array[indexP,:])/N0_Red, '-', label = r'$-4(\beta_{4}+\beta_{5}) {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+plot1.plot(Temperature*1000, (beta3beta4beta5_array[indexP,:])/N0_Red, '-', label = r'$4(\beta_{3}-\beta_{4}-\beta_{5}) {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+plot1.plot(Temperature*1000, (beta5_array[indexP,:])/N0_Red, '-', label = r'$-8 \beta_{5} {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+plot1.plot(Temperature*1000, (beta1beta3_array[indexP,:])/N0_Red, '-', label = r'$8 (\beta_{1} + \beta_{3}) {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+plot1.plot(Temperature*1000, (beta2beta4beta5_array[indexP,:])/N0_Red, '-', label = r'$8 (\beta_{2}+\beta_{4}+\beta_{5}) {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+
+plot1.ylabel(r'p=22bar, EigenValues_of_Curvatures/$J^{-1} m^{-3} N(0)_{18bar}^{-1}$'); plot1.xlabel(r'$T$/mK');plot1.legend()
+plot1.savefig('eigenvalues_of_CurvaturesMatrix_22bar.pdf');
+plot1.show()
+
+plot1.clf()
+plot1.cla()
+plot1.close()
+
+indexP = 9
+plot1.plot(Temperature*1000, (beta4beta5_array[indexP,:])/N0_Red, '-', label = r'$-4(\beta_{4}+\beta_{5}) {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+plot1.plot(Temperature*1000, (beta3beta4beta5_array[indexP,:])/N0_Red, '-', label = r'$4(\beta_{3}-\beta_{4}-\beta_{5}) {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+plot1.plot(Temperature*1000, (beta5_array[indexP,:])/N0_Red, '-', label = r'$-8 \beta_{5} {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+plot1.plot(Temperature*1000, (beta1beta3_array[indexP,:])/N0_Red, '-', label = r'$8 (\beta_{1} + \beta_{3}) {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+plot1.plot(Temperature*1000, (beta2beta4beta5_array[indexP,:])/N0_Red, '-', label = r'$8 (\beta_{2}+\beta_{4}+\beta_{5}) {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+
+plot1.ylabel(r'p=27bar, EigenValues_of_Curvatures/$J^{-1} m^{-3} N(0)_{18bar}^{-1}$'); plot1.xlabel(r'$T$/mK');plot1.legend()
+plot1.savefig('eigenvalues_of_CurvaturesMatrix_27bar.pdf');
+plot1.show()
+
+plot1.clf()
+plot1.cla()
+plot1.close()    
+
 indexP = 13
-plot1.plot(Temperature*1000, beta4beta5_array[indexP,:], '-.',Temperature*1000, beta3beta4beta5_array[indexP,:], '-.',Temperature*1000, beta5_array[indexP,:], '-.',Temperature*1000, beta1beta3_array[indexP,:], '-.',Temperature*1000, beta2beta4beta5_array[indexP,:], '-.'); plot1.ylabel(r'EigenValues_of_Curvatures_Presure 33 bar'); plot1.xlabel(r'$T$/mK')
-plot1.savefig('eigenvalues_of_CurvaturesMatrix_33bar.pdf');
+plot1.plot(Temperature*1000, (beta4beta5_array[indexP,:])/N0_Red, '-', label = r'$-4(\beta_{4}+\beta_{5}) {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+plot1.plot(Temperature*1000, (beta3beta4beta5_array[indexP,:])/N0_Red, '-', label = r'$4(\beta_{3}-\beta_{4}-\beta_{5}) {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+plot1.plot(Temperature*1000, (beta5_array[indexP,:])/N0_Red, '-', label = r'$-8 \beta_{5} {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+plot1.plot(Temperature*1000, (beta1beta3_array[indexP,:])/N0_Red, '-', label = r'$8 (\beta_{1} + \beta_{3}) {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+plot1.plot(Temperature*1000, (beta2beta4beta5_array[indexP,:])/N0_Red, '-', label = r'$8 (\beta_{2}+\beta_{4}+\beta_{5}) {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+
+plot1.ylabel(r'p=31bar, EigenValues_of_Curvatures/$J^{-1} m^{-3} N(0)_{18bar}^{-1}$'); plot1.xlabel(r'$T$/mK');plot1.legend()
+plot1.savefig('eigenvalues_of_CurvaturesMatrix_31bar.pdf');
+plot1.show()
+
+plot1.clf()
+plot1.cla()
+plot1.close()
+
+indexP = 16
+plot1.plot(Temperature*1000, (beta4beta5_array[indexP,:])/N0_Red, '-', label = r'$-4(\beta_{4}+\beta_{5}) {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+plot1.plot(Temperature*1000, (beta3beta4beta5_array[indexP,:])/N0_Red, '-', label = r'$4(\beta_{3}-\beta_{4}-\beta_{5}) {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+plot1.plot(Temperature*1000, (beta5_array[indexP,:])/N0_Red, '-', label = r'$-8 \beta_{5} {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+plot1.plot(Temperature*1000, (beta1beta3_array[indexP,:])/N0_Red, '-', label = r'$8 (\beta_{1} + \beta_{3}) {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+plot1.plot(Temperature*1000, (beta2beta4beta5_array[indexP,:])/N0_Red, '-', label = r'$8 (\beta_{2}+\beta_{4}+\beta_{5}) {\Delta_{A}^{2}} N(0)_{18bar}^{-1}$')
+
+plot1.ylabel(r'p=34bar, EigenValues_of_Curvatures/$J^{-1} m^{-3} N(0)_{18bar}^{-1}$'); plot1.xlabel(r'$T$/mK');plot1.legend()
+plot1.savefig('eigenvalues_of_CurvaturesMatrix_34bar.pdf');
 plot1.show()
 
 plot1.clf()
