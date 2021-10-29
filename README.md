@@ -1,4 +1,5 @@
 # AB_PhaseTransition wiki page
+
 Repsositry and codes devoted on A-B transtion, Bubble Nucleation and Some Confinements Physics 
 
 ## Descriptions
@@ -35,9 +36,12 @@ The defult way is launching from bash. And it's ok for rungning in IDE.
 # curvature countour plot
 ~$ python3 plot_curvatures_pressureFixed_APhase_ContourPlot_V0.py > out.out
 ```
+![alt text][plot1]
 
 ### Mathematica ![Mathmatica](https://github.com/timohyva/AB_PhaseTransition/blob/master/logo_languge3.png)
 Same with any other .nb script. No powerful resourse is needed.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+[plot1]: https://github.com/timohyva/AB_PhaseTransition/blob/master/Contour_And_Density_Plot_Of_1st_EigenvalueOfCurvatureMatirx.png
