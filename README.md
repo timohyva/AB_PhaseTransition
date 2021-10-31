@@ -12,7 +12,7 @@ The strong coupling correection model comes from Physical Review B papers by Rob
 
 The codes are developed to implement different kinds of calculations involving SC-Ginzburg-Landau free energy and dydic tensor field/order parameter of symmetry-breking phases of liquid Helium-3 in mK level temperature. 
 
-(* The implemet of physics introduced by confiment geometry will be considered/developed soon *)
+(* The implement of physics introduced by confiment geometry will be considered/developed late *)
 
 ## Languages (current)
 * python3
