@@ -1,0 +1,6 @@
+ # ingore types
+*.pdf
+*.py~
+*.out
+*.txt
+
