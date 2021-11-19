@@ -16,7 +16,7 @@ The codes are developed to implement different kinds of calculations involving S
 
 ## Languages (current)
 * python3
-* mathematica
+
 
 ## License
 ![license](https://github.com/timohyva/AB_PhaseTransition/blob/master/GPL3logo2.png)
