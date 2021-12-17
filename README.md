@@ -47,5 +47,5 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 [plot1]: https://github.com/timohyva/AB_PhaseTransition/blob/master/Contour_And_Density_Plot_Of_1st_EigenvalueOfCurvatureMatirx.png
 
-[plot2]: https://github.com/timohyva/AB_PhaseTransition/blob/master/fAfAB_Lotynk_Experiment.pdf 
+[plot2]: https://github.com/timohyva/AB_PhaseTransition/blob/master/Lotynk_Data_Plot_fafab.png 
 
