@@ -45,3 +45,5 @@ Same with any other .nb script. No powerful resourse is needed.
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 [plot1]: https://github.com/timohyva/AB_PhaseTransition/blob/master/Contour_And_Density_Plot_Of_1st_EigenvalueOfCurvatureMatirx.png
+
+[plot2]: 
