@@ -1,7 +1,7 @@
 # AB_PhaseTransition wiki page
 
 Repsositry and codes devoted on A-B transtion, Bubble Nucleation and Some Confinements Physics 
-![WP2](https://github.com/timohyva/AB_PhaseTransition/blob/master/QUEST_DMC1.png)
+![WP2][QUEST_DMC_WP2]
 
 ## Descriptions
 This repositoty contaitains a coefficients obeject ([Module_SC](https://github.com/timohyva/AB_PhaseTransition/blob/master/Module_SC_CorrectionObject_V01.py)), which calculates the forth order coefficients of Ginzburg-Landau with Strong coupling correction. An other modeule named [Module_SC_Beta](https://github.com/timohyva/AB_PhaseTransition/blob/master/Module_SC_Beta_V01.py) uses this coefficient object to provides all GL paramters, gaps energies and coherent length over p-T plane.
@@ -50,3 +50,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 [plot2]: https://github.com/timohyva/AB_PhaseTransition/blob/master/Lotynk_Data_Plot_fafab.png 
 
+[QUEST_DMC_WP2]: https://github.com/timohyva/AB_PhaseTransition/blob/master/QUEST_DMC1.png
