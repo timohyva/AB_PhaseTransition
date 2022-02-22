@@ -1,9 +1,9 @@
- # ingore types
+# ingore types
 *.pdf
 *.py~
 *.out
 *.txt
 
 # ignore folder
-/__pycache__
+*/
 
