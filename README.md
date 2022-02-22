@@ -66,6 +66,10 @@ Module fphi-AtoB-V0* is an example about using SCCB objects.
 <img width="450" src="https://github.com/timohyva/AB_PhaseTransition/blob/master/Lotynk_Data_Plot_fafab.png" alt="Lotynk">
 </p>
 
+<p align="center">
+<img width="450" src="https://github.com/timohyva/AB_PhaseTransition/blob/master/fphiAB.png" alt="fphiAB">
+</p>
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
