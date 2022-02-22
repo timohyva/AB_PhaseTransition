@@ -14,13 +14,10 @@ This repository provides modules and codes about many calculations based on stro
 
 The basic block of this repo consists of three modules:
 <p align="center">
-    <Module-SCCO-V0*, Module-SC-Beta-V0*, Module-SCC-bB-V0*>
+    Module-SCCO-V0*, Module-SC-Beta-V0*, Module-SCC-bB-V0*
 </p>
 
 [SCCO](https://github.com/timohyva/AB_PhaseTransition/blob/master/Module_SCCO_V02.py) offers an object, which directly talks with strong coupling data sheet and generates required SC corrected data. The calling requirments is set as coming from [SC-Beta](https://github.com/timohyva/AB_PhaseTransition/blob/master/Module_SC_Beta_V03.py). This module provides the interfaces, though which the pre-indices, the dimensionless munerical values of SC data and the characteristic dimensional qualities (e.g., Tc, N(0), Kb * Tc, V_{Fermi} and coherent length) can be independently called as object attributes. It allows most of interested qualities in Helium-3 can be called though the handy module [SCC-bB](https://github.com/timohyva/AB_PhaseTransition/blob/master/Module_SCC_bB_V00.py). (see more in How To Use)
-
-This repository contaitains a coefficients obeject ([Module_SC](https://github.com/timohyva/AB_PhaseTransition/blob/master/Module_SC_CorrectionObject_V01.py)), which calculates the forth order coefficients of Ginzburg-Landau with Strong coupling correction. An other modeule named [Module_SC_Beta](https://github.com/timohyva/AB_PhaseTransition/blob/master/Module_SC_Beta_V01.py) uses this coefficient object to provides all GL paramters, gaps energies and coherent length over p-T plane.
-
 
 
 (* The implement of physics introduced by confiment geometry will be considered/developed late *)
