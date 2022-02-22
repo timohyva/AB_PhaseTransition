@@ -46,7 +46,7 @@ The defult way is launching from bash. And it's ok for rungning in IDE.
 ~$ python3 plot_curvatures_pressureFixed_APhase_ContourPlot_V0.py > out.out
 ```
 <p align="center">
-![alt text][plot1]
+<img width="200" src="https://github.com/timohyva/AB_PhaseTransition/blob/master/Contour_And_Density_Plot_Of_1st_EigenvalueOfCurvatureMatirx.png" alt="curvature">
 </p>
 
 <p align="center">
