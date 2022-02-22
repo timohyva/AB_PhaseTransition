@@ -21,8 +21,7 @@ The codes are developed to implement different kinds of calculations involving S
 
 
 ## License
-![license](https://github.com/timohyva/AB_PhaseTransition/blob/master/GPL3logo2.png)
-[GPV3] (https://www.gnu.org/licenses/old-licenses/gpl-2.0-faq.en.html)
+[GPLV3] (https://www.gnu.org/licenses/old-licenses/gpl-2.0-faq.en.html)
 
 ## Running The codes
 
