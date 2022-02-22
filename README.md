@@ -41,8 +41,6 @@ The defult way is launching from bash. And it's ok for rungning in IDE.
 ![alt text][plot1]
 ![Lotynk_Data_Plot][plot2]
 
-### Mathematica ![Mathmatica](https://github.com/timohyva/AB_PhaseTransition/blob/master/logo_languge3.png)
-Same with any other .nb script. No powerful resourse is needed.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
