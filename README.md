@@ -45,8 +45,13 @@ The defult way is launching from bash. And it's ok for rungning in IDE.
 # curvature countour plot
 ~$ python3 plot_curvatures_pressureFixed_APhase_ContourPlot_V0.py > out.out
 ```
+<p align="center">
 ![alt text][plot1]
+</p>
+
+<p align="center">
 ![Lotynk_Data_Plot][plot2]
+</p>
 
 
 ## Contributing
