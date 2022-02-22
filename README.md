@@ -38,21 +38,22 @@ The defult way is launching from bash. And it's ok for runing in IDE.
 ~$ python3 import Module_SCC_bB_V0* as SCCB 
 ```
 After importing, the phyical qualities can be invoked as object attributes:
-* SCCB.alpha_bar(p, T)
-* SCCB.beta1_bar(p, T)
-* SCCB.beta2_bar(p, T)
-
-...
+```python
+SCCB.alpha_bar(p, T)
+SCCB.beta1_bar(p, T)
+SCCB.beta2_bar(p, T)
+```
 or
-
-* SCCB.betaA_bar(p, T)
-* SCCB.betaB_bar(p, T)
+```python
+SCCB.betaA_bar(p, T)
+SCCB.betaB_bar(p, T)
+```
 
 and
-
-* SCCB.DeltaA2_bar(p, T)
-* SCCB.DeltaB2_bar(p, T)
-
+```python
+SCCB.DeltaA2_bar(p, T)
+SCCB.DeltaB2_bar(p, T)
+```
 ...
 
 ##
