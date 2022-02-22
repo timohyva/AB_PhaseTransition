@@ -5,5 +5,5 @@
 *.txt
 
 # ignore folder
-__pycache__
+/__pycache__
 
