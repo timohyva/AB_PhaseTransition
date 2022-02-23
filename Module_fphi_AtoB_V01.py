@@ -98,10 +98,10 @@ zeta3 = 1.2020569;
 
 # dimensionless M2, with unit N(0)
 def M2_bar(p, T):
-   return ((SCCB.alpha_bar(p, T)
-           *((SCCB.alpha_bar(p, T)*(14.*SCCB.beta1_bar(p, T) + 14.*SCCB.beta2_bar(p, T) + 7.*SCCB.beta3_bar(p, T) + 3.*SCCB.beta4_bar(p, T) + SCCB.beta5_bar(p, T)))/(3.*SCCB.betaA_bar(p, T)*SCCB.betaB_bar(p, T))  
-             +8.*math.sqrt(2./3.)*math.sqrt(SCCB.DeltaA2_bar(p, T))*math.sqrt(SCCB.DeltaB2_bar(p, T))))
-           /(-2.*SCCB.DeltaA2_bar(p, T) + 2.*math.sqrt(2./3.)*math.sqrt(SCCB.DeltaA2_bar(p,T))*math.sqrt(SCCB.DeltaB2_bar(p, T)) - 2.*SCCB.DeltaB2_bar(p, T)))
+   return  -((SCCB.alpha_bar(p, T)
+             *((SCCB.alpha_bar(p, T)*(14.*SCCB.beta1_bar(p, T) + 14.*SCCB.beta2_bar(p, T) + 7.*SCCB.beta3_bar(p, T) + 3.*SCCB.beta4_bar(p, T) + SCCB.beta5_bar(p, T)))/(3.*SCCB.betaA_bar(p, T)*SCCB.betaB_bar(p, T))  
+                +8.*math.sqrt(2./3.)*math.sqrt(SCCB.DeltaA2_bar(p, T))*math.sqrt(SCCB.DeltaB2_bar(p, T))))
+             /(-2.*SCCB.DeltaA2_bar(p, T) + 2.*math.sqrt(2./3.)*math.sqrt(SCCB.DeltaA2_bar(p,T))*math.sqrt(SCCB.DeltaB2_bar(p, T)) - 2.*SCCB.DeltaB2_bar(p, T)))
 
 # dimensionless \delta, with unit N0 * (Kb * Tc)^(-1)          
 def delta3_bar(p, T):          
@@ -153,7 +153,7 @@ def fphi_bar(p, T, phi_bar):
    # third term, in unit of N0 * (Kb*Tc)^(-2) * (Kb*Tc)^(4)
    f4 = (1./4.) * lambda4_bar(p, T) * (phi_bar**4)
 
-   return (f1 - f3 + f4)
+   return (f2 - f3 + f4)
 
 
 ##
