@@ -60,13 +60,14 @@ SCCB.DeltaB2_bar(p, T)
 
 Module fphi-AtoB-V0* is an example about using SCCB objects. This module provides barrier location (\phi_{-}), barrier height (f(\phi_{-})), free energy (potential line) etc along A and B phases:
 ```python
-import Module_fphi_AtoB_V00 as fphi_AB
+import Module_fphi_AtoB_V01 as AB
 import numpy as np
 import matplotlib.pyplot as plt
 
 fig, ax = plt.subplots(1,1)
-phi = np.arange(0., 1.5, 0.1, dtype=float64)
-ax.plot(phi, fphi_bar(26, 1.8, phi));ax.set_xlabel(r"p/bar");ax.set_ylabel(r"f(\phi)/(N(0) \times (kb \times Tc)^{2})")
+phi = np.arange(0., 6.5, 0.1, dtype=np.float64)
+for p in range(0, 34, 2): ax.plot(phi, AB.fphi_bar(p, 0.5*(10**(-3)), phi))
+ax.set_xlabel(r"$\phi/k_{b} \dot T_{c}$");ax.set_ylabel(r"$f(\phi)/(N(0) \times (kb \dot Tc)^{2})$");ax.grid(True)
 
 plt.show()
 ```
