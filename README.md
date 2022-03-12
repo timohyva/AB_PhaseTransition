@@ -23,7 +23,7 @@ The basic block of this repo consists of three modules:
 (* The implement of physics introduced by confiment geometry will be considered/developed late *)
 
 ## Languages (current)
-* python3
+* python3, C++
 
 
 ## License
