@@ -134,7 +134,7 @@ p3_arr = p3_arr[boolen_Q3]
 ##   >>>>>>>>>>>>>>>>   Q4 data     <<<<<<<<<<<<<<<<<        ##
 
 stp4 = 0.001
-T4arr1 = np.arange(2.121, 2.29, stp3)
+T4arr1 = np.arange(2.121, 2.29, stp4)
 T4arr2 = np.arange(2.29, stp4+SC_beta.Tcp(29.3)*1000, stp4)
 # print(" \nT1arr1 looks like\n ", T1arr1)
 # print(" \nT1arr2 looks like\n ", T1arr2)
@@ -149,10 +149,98 @@ T4_HEC_arr = T4_HEC_arr[boolen_Q4]
 p4_arr = np.append(np.linspace(20.919, 29.3, len(T4arr1)), 29.3*np.ones(T4arr2.shape))
 p4_arr = p4_arr[boolen_Q4]
 
-# print(" \nlength of p4_arr: ",len(p4_arr), " length of T4_HEC_arr: ", len(T4_HEC_arr))  
+# print(" \nlength of p4_arr: ",len(p4_arr), " length of T4_HEC_arr: ", len(T4_HEC_arr))
 
-Tarr_constQ_list = [T1_HEC_arr, T2_HEC_arr, T3_HEC_arr, T4_HEC_arr]
-parr_constQ_list = [p1_arr, p2_arr, p3_arr, p4_arr]
+
+##    >>>>>>>>>>>>>>>>   Q5 data, Q 65    <<<<<<<<<<<<<<<<<<     ##
+
+stp5 = 0.001
+T5arr1 = np.arange(2.146, 2.306, stp5)
+T5arr2 = np.arange(2.306, stp5+SC_beta.Tcp(29.3)*1000, stp5)
+# print(" \nT1arr1 looks like\n ", T1arr1)
+# print(" \nT1arr2 looks like\n ", T1arr2)
+
+# TAb point digtized from the plot in cornell's manuscript 
+pABQ5 = 23.267794143331198; TABQ5= 2.196113989637306 # mK
+                                                          
+T5_HEC_arr = np.append(T5arr1, T5arr2)
+boolen_Q5 = T5_HEC_arr > TABQ5
+T5_HEC_arr = T5_HEC_arr[boolen_Q5]
+
+p5_arr = np.append(np.linspace(20.553, 29.3, len(T5arr1)), 29.3*np.ones(T5arr2.shape))
+p5_arr = p5_arr[boolen_Q5]
+
+# print(" \nlength of p5_arr: ",len(p5_arr), " length of T5_HEC_arr: ", len(T5_HEC_arr))
+
+##    >>>>>>>>>>>>>>>>   Q6 data,Q 53    <<<<<<<<<<<<<<<<<<     ##
+
+stp6 = 0.001
+T6arr1 = np.arange(2.181, 2.323, stp6)
+T6arr2 = np.arange(2.323, stp6+SC_beta.Tcp(29.3)*1000, stp6)
+# print(" \nT1arr1 looks like\n ", T1arr1)
+# print(" \nT1arr2 looks like\n ", T1arr2)
+
+# TAb point digtized from the plot in cornell's manuscript 
+pABQ6 = 22.46725994061827; TABQ6= 2.212642487046632 # mK
+                                                          
+T6_HEC_arr = np.append(T6arr1, T6arr2)
+boolen_Q6 = T6_HEC_arr > TABQ6
+T6_HEC_arr = T6_HEC_arr[boolen_Q6]
+
+p6_arr = np.append(np.linspace(20.47, 29.3, len(T6arr1)), 29.3*np.ones(T6arr2.shape))
+p6_arr = p6_arr[boolen_Q6]
+
+# print(" \nlength of p6_arr: ",len(p6_arr), " length of T6_HEC_arr: ", len(T6_HEC_arr))
+
+
+##    >>>>>>>>>>>>>>>>   Q7 data, Q 45    <<<<<<<<<<<<<<<<<<     ##
+
+stp7 = 0.001
+T7arr1 = np.arange(2.184, 2.339, stp7)
+T7arr2 = np.arange(2.339, stp7+SC_beta.Tcp(29.3)*1000, stp7)
+# print(" \nT1arr1 looks like\n ", T1arr1)
+# print(" \nT1arr2 looks like\n ", T1arr2)
+
+# TAb point digtized from the plot in cornell's manuscript 
+pABQ7 = 22.127622984223088; TABQ7 = 2.218911917098446 # mK
+
+                                                          
+T7_HEC_arr = np.append(T7arr1, T7arr2)
+boolen_Q7 = T7_HEC_arr > TABQ7
+T7_HEC_arr = T7_HEC_arr[boolen_Q7]
+
+p7_arr = np.append(np.linspace(20.025, 29.3, len(T7arr1)), 29.3*np.ones(T7arr2.shape))
+p7_arr = p7_arr[boolen_Q7]
+
+# print(" \nlength of p7_arr: ",len(p7_arr), " length of T7_HEC_arr: ", len(T7_HEC_arr))
+
+
+##    >>>>>>>>>>>>>>>>   Q8 data, Q 40    <<<<<<<<<<<<<<<<<<     ##
+
+stp8 = 0.001
+T8arr1 = np.arange(2.198, 2.351, stp8)
+T8arr2 = np.arange(2.351, stp8+SC_beta.Tcp(29.3)*1000, stp8)
+# print(" \nT1arr1 looks like\n ", T1arr1)
+# print(" \nT1arr2 looks like\n ", T1arr2)
+
+# TAb point digtized from the plot in cornell's manuscript 
+pABQ8 = 21.836500203760842; TABQ8 = 2.2240414507772024 # mK
+
+                                                          
+T8_HEC_arr = np.append(T8arr1, T8arr2)
+boolen_Q8 = T8_HEC_arr > TABQ8
+T8_HEC_arr = T8_HEC_arr[boolen_Q8]
+
+p8_arr = np.append(np.linspace(20.255, 29.3, len(T8arr1)), 29.3*np.ones(T8arr2.shape))
+p8_arr = p8_arr[boolen_Q8]
+
+# print(" \nlength of p8_arr: ",len(p8_arr), " length of T8_HEC_arr: ", len(T8_HEC_arr))
+
+
+
+
+Tarr_constQ_list = [T1_HEC_arr, T2_HEC_arr, T3_HEC_arr, T4_HEC_arr, T5_HEC_arr, T6_HEC_arr, T7_HEC_arr, T8_HEC_arr]
+parr_constQ_list = [p1_arr, p2_arr, p3_arr, p4_arr, p5_arr, p6_arr, p7_arr, p8_arr]
 
 
 ###############################################################
@@ -382,8 +470,37 @@ parr_other2_list = [pO21_arr, pO22_arr, pO23_arr]
 
 
 ###############################################################
+##                         no name                          ###
+###############################################################
+
+##   >>>>>>>>>>>>>>>>   NN_1 data     <<<<<<<<<<<<<<<<<      ##
+
+stpNN1 = 0.001
+TNN1arr1 = np.arange(2.059, 2.16, stpNN1)
+TNN1arr2 = np.arange(2.16, stpNN1+SC_beta.Tcp(29.3)*1000, stpO6)
+# print(" \nTNN1arr1 looks like\n ", TNN1arr1)
+# print(" \nTNN1arr3 looks like\n ", TNN1arr3)
+
+# TAb point digtized from the plot in cornell's manuscript 
+# pABNN1 =  29.3; TABNN1 = 2.039786585365854 # mK
+                                                          
+TNN1_HEC_arr = np.append(TNN1arr1, TNN1arr2)
+
+pNN1_arr = np.append(np.linspace(28.579, 29.3, len(TNN1arr1)), 29.3*np.ones(TNN1arr2.shape))
+
+
+###############################################################
 ##                      interfaces                           ##
 ###############################################################
+
+def arr_generator_noname(no, Tarrl = TNN1_HEC_arr, parrl = pNN1_arr):
+  '''Interface for handling array of noname run.
+
+  *no* could be 1.
+  '''
+  print(" number of data groups: ", no,", and len of Tarrl ", len(Tarrl))
+  return parrl, Tarrl
+
 
 def arr_generator_other_2(no, Tarrl = Tarr_other2_list, parrl = parr_other2_list):
   '''Interface for handling arries generations for Other-1 
@@ -405,7 +522,7 @@ def arr_generator_other_1(no, Tarrl = Tarr_other1_list, parrl = parr_other1_list
 def arr_generator_constQ(no, Tarrl = Tarr_constQ_list, parrl = parr_constQ_list):
   '''Interface for handling arries generations for Const-Q
 
-  *no* represnets the series number of datas. no could be 1,2,3,4.
+  *no* represnets the series number of datas. no could be 1,2,3,4,5,6,7,8.
   '''
   return parrl[no-1], Tarrl[no-1]
   
@@ -427,7 +544,7 @@ def get_data(key, no):
 
   calling: RR_pT.get_data(key, no), where key is one of following strings, 
 
-      "constp", "constQ", "others" and no is a int type number.
+      "constp", "constQ", "others_1(2)", "noname" and no is a int type number.
   
   return: p_arr, T_arr, T_arr in unit of mK
   
@@ -440,4 +557,6 @@ def get_data(key, no):
   if key == "others_1": return arr_generator_other_1(no)
 
   if key == "others_2": return arr_generator_other_2(no)
+
+  if key == "noname": return arr_generator_noname(no)
     
