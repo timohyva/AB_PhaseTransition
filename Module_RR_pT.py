@@ -236,11 +236,29 @@ p8_arr = p8_arr[boolen_Q8]
 
 # print(" \nlength of p8_arr: ",len(p8_arr), " length of T8_HEC_arr: ", len(T8_HEC_arr))
 
+##    >>>>>>>>>>>>>>>>   Q9 data, " const Q, waiting one day then cooling "  <<<<<<<<<<<<<<<<<<     ##
+
+stp9 = 0.001
+T9arr1 = np.arange(2.146, 2.306, stp9)
+T9arr2 = np.arange(2.306, stp9+SC_beta.Tcp(29.3)*1000, stp9)
+# print(" \nT1arr1 looks like\n ", T1arr1)
+# print(" \nT1arr2 looks like\n ", T1arr2)
+
+# TAb point digtized from the plot in cornell's manuscript 
+pABQ9 = 23.267794143331198; TABQ9 = 2.196113989637306 # mK
+                                                          
+T9_HEC_arr = np.append(T9arr1, T9arr2)
+boolen_Q9 = T9_HEC_arr > TABQ9
+T9_HEC_arr = T9_HEC_arr[boolen_Q9]
+
+p9_arr = np.append(np.linspace(20.553, 29.3, len(T9arr1)), 29.3*np.ones(T9arr2.shape))
+p9_arr = p9_arr[boolen_Q9]
+
+# print(" \nlength of p9_arr: ",len(p9_arr), " length of T9_HEC_arr: ", len(T9_HEC_arr))
 
 
-
-Tarr_constQ_list = [T1_HEC_arr, T2_HEC_arr, T3_HEC_arr, T4_HEC_arr, T5_HEC_arr, T6_HEC_arr, T7_HEC_arr, T8_HEC_arr]
-parr_constQ_list = [p1_arr, p2_arr, p3_arr, p4_arr, p5_arr, p6_arr, p7_arr, p8_arr]
+Tarr_constQ_list = [T1_HEC_arr, T2_HEC_arr, T3_HEC_arr, T4_HEC_arr, T5_HEC_arr, T6_HEC_arr, T7_HEC_arr, T8_HEC_arr, T9_HEC_arr]
+parr_constQ_list = [p1_arr, p2_arr, p3_arr, p4_arr, p5_arr, p6_arr, p7_arr, p8_arr, p9_arr]
 
 
 ###############################################################
@@ -522,7 +540,7 @@ def arr_generator_other_1(no, Tarrl = Tarr_other1_list, parrl = parr_other1_list
 def arr_generator_constQ(no, Tarrl = Tarr_constQ_list, parrl = parr_constQ_list):
   '''Interface for handling arries generations for Const-Q
 
-  *no* represnets the series number of datas. no could be 1,2,3,4,5,6,7,8.
+  *no* represnets the series number of datas. no could be 1,2,3,4,5,6,7,8,9.
   '''
   return parrl[no-1], Tarrl[no-1]
   
